@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define environment variables here
+        FOO = 'bar'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Your build steps here
+                sh 'echo $FOO' // Access the environment variable
+            }
+        }
+    }
+}
